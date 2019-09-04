@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<sdf version="1.5">
+
+<model name="model_actor"></model>
+
+<actor name="actor0">
+    <pose>-4.0 4.0 1.02 0 0 0</pose>
+    <skin><filename>talk_b.dae</filename><scale>1</scale></skin>
+    <animation name="walking"><filename>walk.dae</filename><scale>1</scale><interpolate_x>true</interpolate_x></animation>
+    <plugin filename="libactorplugin_ros.so" name="None">
+        <speed>1.2</speed><target>-1.0 3.5 1.02</target>
+        <ignore_obstacles><model>caffe</model><model>ground_plane</model>
+        </ignore_obstacles>
+    </plugin>
+</actor>
+</sdf>
+<!--<?xml version='1.0' encoding='UTF-8'?>-->
+<!--<sdf version="1.5">-->
+<!--  <model name="actor">-->
+<!-- <actor name="actor0">-->
+<!--    <pose>4.0 4.0 1.02 0 0 0</pose>-->
+<!--  <skin><filename>talk_b.dae</filename><scale>1</scale></skin>-->
+<!--  <animation name="walking"><filename>walk.dae</filename><scale>1</scale><interpolate_x>true</interpolate_x></animation>-->
+<!--     <plugin filename="libactorplugin_ros.so" name="p2"><speed>0.9</speed><target>-6.5 3 1.02</target><ignore_obstacles><model>caffe</model><model>ground_plane</model></ignore_obstacles></plugin>-->
+<!-- </actor>-->
+<!--  </model>-->
+<!--</sdf>-->

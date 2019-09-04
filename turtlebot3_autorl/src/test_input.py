@@ -1,0 +1,5 @@
+goals = raw_input("Press Enter to continue...")
+goals = goals.split(" ")
+x = float(goals[0])
+y = float(goals[1])
+print(x,y)

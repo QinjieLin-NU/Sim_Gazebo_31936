@@ -1,0 +1,22 @@
+<launch>
+  <arg name="wall_file" default="$(find basics)/models/wall.sdf"/>
+  <arg name="wall_resolutions" default="0.1"/>
+  <arg name="wall_width" default="2.5"/>
+  <arg name="wall_height" default="10"/>
+  <arg name="threshold" default="225"/>
+
+  <node pkg="basics" type="occmap_converter.py" name="occmap_to_image"  output="screen">
+  </node>
+
+  <include file="$(find opencv_apps)/launch/convex_hull.launch">
+    <arg name="threshold" value="$(arg threshold)"/>
+  </include>
+
+  <!-- turtlebot3_teleop_key already has its own built in velocity smoother -->
+  <node pkg="basics" type="spawn_map.py" name="spawn_map"  output="screen">
+  <param name="wall_file" value="$(arg wall_file)"/>
+  <param name="wall_resolutions" value="$(arg wall_resolutions)"/>
+  <param name="wall_width" value="$(arg wall_width)"/>
+  <param name="wall_height" value="$(arg wall_height)"/>
+  </node>
+</launch>

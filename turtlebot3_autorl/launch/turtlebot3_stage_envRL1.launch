@@ -1,0 +1,18 @@
+<launch>
+    <arg name="gui" default="false"/>
+    <group if="$(arg gui)">
+        <arg name="stage_args" value="$(find turtlebot3_autorl)/worlds/stage_multiRobot1.world" />
+        <node name="stageros" pkg="stage_ros_add_pose_and_crash" type="stageros" 
+            args="$(arg stage_args)" output="screen"
+            cwd = "node">
+        </node>
+    </group>
+    <group unless="$(arg gui)">
+        <arg name="stage_args" value="-g $(find turtlebot3_autorl)/worlds/stage_multiRobot1.world" />
+        <node name="stageros" pkg="stage_ros_add_pose_and_crash" type="stageros" 
+            args="$(arg stage_args)" output="screen"
+            cwd = "node">
+        </node>
+    </group>
+
+</launch>

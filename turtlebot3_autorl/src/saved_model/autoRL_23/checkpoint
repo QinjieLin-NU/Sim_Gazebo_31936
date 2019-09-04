@@ -1,0 +1,6 @@
+model_checkpoint_path: "/root/catkin_ws/rl_ws/src/turtlebot3_autorl/src/saved_model/autoRL_23/PPO_model-299.ckpt"
+all_model_checkpoint_paths: "/root/catkin_ws/rl_ws/src/turtlebot3_autorl/src/saved_model/autoRL_23/PPO_model-295.ckpt"
+all_model_checkpoint_paths: "/root/catkin_ws/rl_ws/src/turtlebot3_autorl/src/saved_model/autoRL_23/PPO_model-296.ckpt"
+all_model_checkpoint_paths: "/root/catkin_ws/rl_ws/src/turtlebot3_autorl/src/saved_model/autoRL_23/PPO_model-297.ckpt"
+all_model_checkpoint_paths: "/root/catkin_ws/rl_ws/src/turtlebot3_autorl/src/saved_model/autoRL_23/PPO_model-298.ckpt"
+all_model_checkpoint_paths: "/root/catkin_ws/rl_ws/src/turtlebot3_autorl/src/saved_model/autoRL_23/PPO_model-299.ckpt"

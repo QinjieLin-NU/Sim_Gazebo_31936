@@ -1,0 +1,8 @@
+<launch>
+    <arg name="gui" default="false"/>
+    <!-- relative path in turtlebot_autorl/worlds-->
+    <arg name="png_loc" default="room2.png"/>
+    <param name="gui"  value="$(arg gui)"/>
+    <param name="png_loc"  value="$(arg png_loc)"/>
+    <node pkg="turtlebot3_autorl" type="spawn_stage_worlds.py" name="spawn_stage_worlds.py" output="screen" />
+</launch>

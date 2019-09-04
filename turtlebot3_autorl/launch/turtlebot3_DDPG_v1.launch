@@ -1,0 +1,47 @@
+<launch>
+  <!--RL training setting  !-->
+  <arg name="stage" default="2"/>
+  <arg name="train" default="true"/>
+  <arg name="load" default="false"/>
+  <arg name="itimateLearning" default="false"/>
+  <arg name="filename" default="autoRL_10000"/>
+  <arg name="load_ep" default="295"/>
+  <arg name="real_world" default="false"/>
+
+  <param name="stage_number"  value="$(arg stage)"/>
+  <param name="train"  value="$(arg train)"/>
+  <param name="load"  value="$(arg load)"/>
+  <param name="filename"  value="$(arg filename)"/>
+  <param name="load_ep"  value="$(arg load_ep)"/>
+  <param name="itimateFlag"  value="$(arg itimateLearning)"/>
+  <param name="real_world"  value="$(arg real_world)"/>
+
+
+  <!-- RL  setting!-->
+  <arg name="ep_len" default="200"/>
+  <arg name="complex_nn" default="0.0"/>
+  <arg name="step_time" default="0.5"/>
+  <arg name="dis_weight" default="1"/>
+  <arg name="lin_weight" default="1"/>
+  <arg name="obs_weight" default="1"/>
+  <arg name="ori_weight" default="1"/>
+  <arg name="col_weight" default="1"/>
+  <arg name="goal_weight" default="1"/>
+  <arg name="rot_weight" default="1"/>
+  <arg name="laser_step" default="60"/>
+
+  <param name="dis_weight"  value="$(arg dis_weight)"/>
+  <param name="lin_weight"  value="$(arg lin_weight)"/>
+  <param name="obs_weight"  value="$(arg obs_weight)"/>
+  <param name="ori_weight"  value="$(arg ori_weight)"/>
+  <param name="col_weight"  value="$(arg col_weight)"/>
+  <param name="goal_weight"  value="$(arg goal_weight)"/>
+  <param name="rot_weight"  value="$(arg rot_weight)"/>
+  <param name="laser_step"  value="$(arg laser_step)"/>
+  <param name="ep_len"  value="$(arg ep_len)"/>
+  <param name="complex_nn"  value="$(arg complex_nn)"/>
+  <param name="step_time"  value="$(arg step_time)"/>
+
+  <node pkg="turtlebot3_autorl" type="turtlebot3_DDPG_v1.py" name="turtlebot3_DDPG_v1.py" output="screen" />
+
+</launch>

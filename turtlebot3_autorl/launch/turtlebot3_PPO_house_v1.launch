@@ -1,0 +1,40 @@
+<launch>
+  <!--RL training setting  !-->
+  <arg name="stage" default="2"/>
+  <arg name="train" default="false"/>
+  <arg name="load" default="true"/>
+  <arg name="itimateLearning" default="false"/>
+  <arg name="filename" default="autoRL_13"/>
+  <arg name="load_ep" default="199"/>
+  <arg name="ep_len" default="200"/>
+  <arg name="reset_epLen" default="800"/>
+
+  <param name="stage_number"  value="$(arg stage)"/>
+  <param name="train"  value="$(arg train)"/>
+  <param name="load"  value="$(arg load)"/>
+  <param name="filename"  value="$(arg filename)"/>
+  <param name="load_ep"  value="$(arg load_ep)"/>
+  <param name="ep_len"  value="$(arg ep_len)"/>
+  <param name="reset_epLen"  value="$(arg reset_epLen)"/>
+  <param name="itimateFlag"  value="$(arg itimateLearning)"/>
+
+  <!-- RL rewaed setting!-->
+  <arg name="theta_step" default="-1"/>
+  <arg name="theta_distance" default="1"/>
+  <arg name="theta_collision" default="-1"/>
+  <arg name="theta_turning" default="1"/>
+  <arg name="theta_clearance" default="1"/>
+  <arg name="theta_goal" default="1"/>
+  <arg name="laser_step" default="60"/>
+
+  <param name="theta_step"  value="$(arg theta_step)"/>
+  <param name="theta_distance"  value="$(arg theta_distance)"/>
+  <param name="theta_collision"  value="$(arg theta_collision)"/>
+  <param name="theta_turning"  value="$(arg theta_turning)"/>
+  <param name="theta_clearance"  value="$(arg theta_clearance)"/>
+  <param name="theta_goal"  value="$(arg theta_goal)"/>
+  <param name="laser_step"  value="$(arg laser_step)"/>
+
+  <node pkg="turtlebot3_autorl" type="turtlebot3_PPO_house_v1.py" name="turtlebot3_PPO_house_v1.py" output="screen" />
+
+</launch>
